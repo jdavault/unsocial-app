@@ -1,0 +1,68 @@
+{
+    "name": "unsocial-app",
+    "version": "1.0.0",
+    "description": "Youtube tutorial on TDD with microservices and NodeJS",
+    "main": "src/index.ts",
+    "scripts": {
+        "test": "jest",
+        "prettier": "prettier --check src/**/*.ts",
+        "prettier:fix": "prettier --write src/**/*.ts",
+        "start:dev": "nodemon src/index.ts",
+        "start": "echo start",
+        "lint": "eslint src/**/*.ts",
+        "prepare": "husky install"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jdavault/unsocial-app.git"
+    },
+    "jest": {
+        "testEnvironment": "node",
+        "preset": "ts-jest"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/jdavault/unsocial-app/issues"
+    },
+    "homepage": "https://github.com/jdavault/unsocial-app#readme",
+    "dependencies": {
+        "body-parser": "^1.20.2",
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2",
+        "nodemon": "^2.0.22",
+        "ts-node": "^10.9.1",
+        "typescript": "^5.0.4"
+    },
+    "devDependencies": {
+        "@babel/preset-env": "^7.21.5",
+        "@babel/preset-typescript": "^7.21.5",
+        "@types/express": "^4.17.17",
+        "@types/jest": "^29.5.1",
+        "@types/node": "^20.1.0",
+        "@types/supertest": "^2.0.12",
+        "eslint": "^8.40.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-config-airbnb-typescript-prettier": "^5.0.0",
+        "eslint-plugin-import": "^2.27.5",
+        "husky": "^8.0.3",
+        "jest": "^29.5.0",
+        "lint-staged": "^13.2.2",
+        "prettier": "^2.8.8",
+        "supertest": "^6.3.3",
+        "ts-jest": "^29.1.0"
+    },
+    "lint-staged": {
+        "src/**/*.ts": [
+            "npm run prettier:fix",
+            "npm run lint",
+            "git add"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    }
+}
